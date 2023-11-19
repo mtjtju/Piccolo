@@ -154,7 +154,10 @@ namespace Piccolo
         m_lua_state.set_function("invoke", &LuaComponent::invoke);
         m_lua_state["GameObject"] = m_parent_object;
     }
-
+    
+    // will eventually called by tickOneFrame()
+    // script() runs .lua
+    // m_lua_state maps c++ stuff to lua script
     void LuaComponent::tick(float delta_time)
     {
         // LOG_INFO(m_lua_script);
